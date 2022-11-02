@@ -793,6 +793,7 @@ func (c *conn) getAck() stateType {
 	}
 
 	c.tries = 0
+	c.err = nil
 
 	if c.tx.opcode() == opCodeOACK { // TODO: Avoid checking tx opcode?
 		return c.write
